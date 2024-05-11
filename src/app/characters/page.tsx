@@ -1,9 +1,7 @@
 import api from "@/api";
-import CharacterCard from "../components/CharacterCard";
 
-
-export default async function CharacterCollection({ params: { character_detail_id } }: { params: { character_detail_id: string } }) {
-  const characters = await api.character_fetch(character_detail_id);
+export default async function CharacterCollection() {
+  const characters = []
 
   return (
     <section>

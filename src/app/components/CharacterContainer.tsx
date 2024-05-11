@@ -9,7 +9,7 @@ const CharacterContainer = ({film}:{film:Film}) => {
     const [characters,setCharacters] = useState<Character[]>([]);
 
     useEffect(()=>{
-        film.characters.forEach(async (characterUrl) => {
+        film.characters.forEach(async (characterUrl) => { // esto lo hago asi porque dentro de los films hay un array con todas las url de los characters
             try{
                 const characterData : Character = await api.character_fetch(characterUrl);
                 setCharacters((prevInfo) => [

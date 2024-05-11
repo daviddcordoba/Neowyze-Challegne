@@ -5,6 +5,7 @@ export interface Film{
     director: string;
     characters: string[];
     release_date:string; // esto es un agregado mio
+    url:string;
 }
 
 export interface Character{
