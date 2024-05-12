@@ -20,3 +20,8 @@ export interface Character{
     mass:number;
     url:string;
 }
+
+export interface PaginatedCharacterResponse {
+    count:number;
+    characters: Character[]
+}

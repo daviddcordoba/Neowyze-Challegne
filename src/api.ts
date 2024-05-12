@@ -1,4 +1,4 @@
-import { Character, Film } from "./types";
+import { Character, Film, PaginatedCharacterResponse } from "./types";
 
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -31,8 +31,7 @@ const api = {
             })
 
         return films; 
-      },
-
+    },
     film_fetch: async (film_id:number): Promise<Film> => {
         await sleep(750);
 
@@ -77,8 +76,33 @@ const api = {
                 url: data.url
             }
         return character; 
+    },
+    getAllCharacters: async(currentPage:number):Promise<PaginatedCharacterResponse> => {
+        const data = await fetch(`https://swapi.dev/api/people/?page=${currentPage}`) 
+        .then(res => res.json())
+        .catch(e => {
+            console.log('fetchError:',e)
+            return {};
+        })
+        const characters = data.results.map((character:Character)=>{
+            return {
+                name:character.name,
+                generic_image:"https://www.komar.de/media/catalog/product/cache/13/image/9df78eab33525d08d6e5fb8d27136e95/0/2/026-dvd2_star_wars_poster_classic_1_web.jpg",
+                eye_color:character.eye_color,
+                gender:character.gender,
+                birth_year:character.birth_year,
+                hair_color:character.hair_color,
+                height:character.height,
+                skin_color:character.skin_color,
+                mass:character.mass,
+                url: character.url
+            }
+        })
+        return {
+            count:data.count,
+            characters:characters
+        }
     }
-    
-  };
-  
-  export default api;
+};
+
+export default api;
