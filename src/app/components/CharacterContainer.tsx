@@ -7,11 +7,13 @@ import CharacterCard from './CharacterCard';
 
 const CharacterContainer = ({film}:{film:Film}) => {
     const [characters,setCharacters] = useState<Character[]>([]);
-
+    console.log(film.characters)
     useEffect(()=>{
         film.characters.forEach(async (characterUrl) => { // esto lo hago asi porque dentro de los films hay un array con todas las url de los characters
             try{
-                const characterData : Character = await api.getCharacterById(characterUrl);
+                const parts = characterUrl.split("/");
+                const character_id = parts[parts.length - 2];
+                const characterData : Character = await api.getCharacterById(character_id);
                 setCharacters((prevInfo) => [
                     ...prevInfo,
                     characterData,
