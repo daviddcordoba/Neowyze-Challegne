@@ -1,9 +1,14 @@
+import Link from "next/link"
 
 
 export default async function Home() {
   return (
-    <section className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-      este es el inicio
+    <section >
+      <div className="flex flex-col gap-2">
+        <Link href={`/films`}><span>Ir a peliculas</span></Link>
+        <Link href={`/characters`}><span>Ir a persojanes</span></Link>
+       
+      </div>
     </section>
   );
 }

@@ -6,7 +6,7 @@ Se deberá hacer uso de SWAPI, una API con toda la información esperada de los 
 de Star Wars y completamente abierta https://swapi.dev
 
 -Landing Page:
-Se debe realizar una landing la cual permita ir a la sección de films o a la sección de
+[x]Se debe realizar una landing la cual permita ir a la sección de films o a la sección de
 personajes
 
 -Página de films:
@@ -15,7 +15,7 @@ Cada film debe tener la siguiente información:
 [x] Imagen genérica (debe ser la misma para todos los films)
 [x] Número de episodio
 
-[Página de detalle del film] 
+Página de detalle del film 
 El film debe mostrar la siguiente información:
 [x] Nombre
 [x] Imagen genérica
@@ -23,14 +23,13 @@ El film debe mostrar la siguiente información:
 [x] Director
 [x] Personajes: (deben tener nombre, imagen genérica y url que lleve al detalle de cada personaje)
 
-[Página de personajes]
+Página de personajes
 Cada Personaje en la lista debe mostrar las siguientes características:
-[-] Nombre
-[-] Imagen genérica (debe ser la misma para todos los personajes)
-[-] Color de Ojos
-[-] Género
-Se puede implementar un paginado de 10 personajes por página o también un scroll
-infinito, eso queda a elección del desarrollador
+[x] Nombre
+[x] Imagen genérica (debe ser la misma para todos los personajes)
+[x] Color de Ojos
+[x] Género
+Se puede implementar un [x] paginado de 10 personajes por página o también un scroll infinito, eso queda a elección del desarrollador
 
 Página del detalle de personaje:
 En la página del personaje se debe mostrar la siguiente información:
@@ -51,7 +50,7 @@ Nota: Los filtros se deben aplicar en todos los personajes, no en los primeros 1
 
 
 Aclaración:
-Las propiedades que tengan valor “n/a” o “unknown” no deberían mostrarse en la
+[x]Las propiedades que tengan valor “n/a” o “unknown” no deberían mostrarse en la
 aplicación
 
 Consideraciones generales:
@@ -80,7 +79,7 @@ Se evaluará
     ➔ Prácticas de nombramiento de métodos y variables.
     ➔ Uso y manejo de datos externos.
     ➔ Uso de Client Side Rendering y Server Side Rendering
-    ➔ Uso de Lazy Load para el routing de la aplicación.
+    ➔ Uso de Lazy Load para el rouating de la aplicación.
 
 Nota final
 Esta prueba busca definir tu nivel en el manejo de Next, no determina que seas buen@ o

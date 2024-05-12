@@ -4,7 +4,7 @@ import { Character, Film, PaginatedCharacterResponse } from "./types";
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const api = {
-    list: async (): Promise<Film[]> => {
+    getAllFilms: async (): Promise<Film[]> => {
         const data = await fetch('https://swapi.dev/api/films')
             .then(res => res.json())
             .then(data => data.results)
@@ -32,7 +32,7 @@ const api = {
 
         return films; 
     },
-    film_fetch: async (film_id:number): Promise<Film> => {
+    getFilmById: async (film_id:number): Promise<Film> => {
         await sleep(750);
 
         const data = await fetch(`https://swapi.dev/api/films/${film_id}`)
@@ -50,13 +50,12 @@ const api = {
             release_date:data.release_date.split('-')[0],
             url: data.url,
             generic_image: "https://imgc.allpostersimages.com/img/posters/star-wars-a-new-hope-classic-pose_u-L-FAAPZY0.jpg" // le estoy poniendo a cada 'film' la misma imagen generica
-                
         }
     return film; 
     
     },
-    character_fetch: async(character_url:string) : Promise<Character> => {
-        const data = await fetch(character_url)
+    getCharacterById: async(character_id:string) : Promise<Character> => {
+        const data = await fetch(`https://swapi.dev/api/people/${character_id}`)
             .then(res => res.json())
             .catch(e => {
                 console.log('character_fetch_error:',e)
@@ -65,7 +64,7 @@ const api = {
 
             const character: Character = {
                 name:data.name,
-                generic_image:"https://www.komar.de/media/catalog/product/cache/13/image/9df78eab33525d08d6e5fb8d27136e95/0/2/026-dvd2_star_wars_poster_classic_1_web.jpg",
+                generic_image:"https://static.tvtropes.org/pmwiki/pub/images/rsz_eucvnjsxmamp1kf.png",
                 eye_color:data.eye_color,
                 gender:data.gender,
                 birth_year:data.birth_year,
@@ -78,6 +77,7 @@ const api = {
         return character; 
     },
     getAllCharacters: async(currentPage:number):Promise<PaginatedCharacterResponse> => {
+        
         const data = await fetch(`https://swapi.dev/api/people/?page=${currentPage}`) 
         .then(res => res.json())
         .catch(e => {
@@ -87,7 +87,7 @@ const api = {
         const characters = data.results.map((character:Character)=>{
             return {
                 name:character.name,
-                generic_image:"https://www.komar.de/media/catalog/product/cache/13/image/9df78eab33525d08d6e5fb8d27136e95/0/2/026-dvd2_star_wars_poster_classic_1_web.jpg",
+                generic_image:"https://static.tvtropes.org/pmwiki/pub/images/rsz_eucvnjsxmamp1kf.png",
                 eye_color:character.eye_color,
                 gender:character.gender,
                 birth_year:character.birth_year,

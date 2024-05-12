@@ -11,7 +11,7 @@ const CharacterContainer = ({film}:{film:Film}) => {
     useEffect(()=>{
         film.characters.forEach(async (characterUrl) => { // esto lo hago asi porque dentro de los films hay un array con todas las url de los characters
             try{
-                const characterData : Character = await api.character_fetch(characterUrl);
+                const characterData : Character = await api.getCharacterById(characterUrl);
                 setCharacters((prevInfo) => [
                     ...prevInfo,
                     characterData,
@@ -23,7 +23,7 @@ const CharacterContainer = ({film}:{film:Film}) => {
     },[film.characters])
   return (
     <section >
-        <h1>Personajes</h1>
+        <h1 className='text-center text-xl my-5'>Reparto</h1>
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
                 {characters.map((character)=>
                     <CharacterCard character={character}/>

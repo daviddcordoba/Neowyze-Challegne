@@ -17,7 +17,7 @@ export interface Character{
     hair_color:string;
     height:string;
     skin_color:string;
-    mass:number;
+    mass:string;
     url:string;
 }
 
