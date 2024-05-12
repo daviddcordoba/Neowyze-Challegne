@@ -77,7 +77,7 @@ const api = {
         return character; 
     },
     getAllCharacters: async(currentPage:number):Promise<PaginatedCharacterResponse> => {
-        
+   
         const data = await fetch(`https://swapi.dev/api/people/?page=${currentPage}`) 
         .then(res => res.json())
         .catch(e => {
