@@ -6,6 +6,7 @@ import {useInView} from 'react-intersection-observer'
 import Spinner from './Spinner'
 import api from '@/api'
 import CharactersFullContainer from './CharactersFullContainer'
+
 const LoadMore = () => {
     const [characters,setCharacters] = useState<Character[]>([])
     const [pagesLoaded,setPagesLoaded] = useState(1)
@@ -15,7 +16,8 @@ const LoadMore = () => {
 
     const loadMoreCharacters = async()=>{
      const nextPage = pagesLoaded + 1;
-     const newCharacters = await api.getAllCharacters(nextPage) ?? []
+     const newCharacters = await api.getAllCharacters(nextPage) ?? [];
+     
      if(newCharacters.length == 0){
         setHasMore(false)
      }
@@ -29,6 +31,7 @@ const LoadMore = () => {
             loadMoreCharacters()
         }
     },[inView])
+
   return (
     <>
     <CharactersFullContainer characters={characters}/>

@@ -29,7 +29,7 @@ Cada Personaje en la lista debe mostrar las siguientes características:
 - [x] Imagen genérica (debe ser la misma para todos los personajes)
 - [x] Color de Ojos
 - [x] Género
-Se puede implementar un [x] paginado de 10 personajes por página o también un scroll infinito, eso queda a elección del desarrollador
+Se puede implementar un paginado de 10 personajes por página o también un [x]scroll infinito, eso queda a elección del desarrollador
 
 ## Página del detalle de personaje:
 En la página del personaje se debe mostrar la siguiente información:
@@ -42,11 +42,11 @@ En la página del personaje se debe mostrar la siguiente información:
 - [x] *Color de piel
 - [x] *Masa
 
-##Filtros:
+## Filtros:
 Como plus se pueden implementar los siguientes filtros para la página de personajes:
 -[-] *Filtro por color de ojos
 -[-] *Filtro por género
-**Nota: Los filtros se deben aplicar en todos los personajes, no en los primeros 10
+** Nota: Los filtros se deben aplicar en todos los personajes, no en los primeros 10
 
 
 ### Aclaración:

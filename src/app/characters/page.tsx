@@ -3,20 +3,8 @@ import CharactersFullContainer from "../components/CharactersFullContainer";
 import LoadMore from "../components/LoadMore";
 
 export default async function CharacterCollection() { //ssr
- 
- const characters = await api.getAllCharacters(1);
 
-  /* const nextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-      }
-  }; */
-
-  /* const previusPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-      }
-  }; */
+  const characters = await api.getAllCharacters(1);
 
 
   return (

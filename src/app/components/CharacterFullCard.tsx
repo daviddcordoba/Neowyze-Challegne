@@ -11,7 +11,7 @@ const CharacterFullCard = ({character}:{character:Character}) => {
         <h1>{character.name}</h1>
         <img
             alt={character.name}
-            className="mb-3 h-[400px] object-contain w-full "
+            className="mb-3 h-[200px] object-contain w-full "
                   src={character.generic_image}
         />
         {(character.eye_color !== 'n/a' && character.eye_color !== 'unknown') && <span>Eye Color:{character.eye_color}</span>}

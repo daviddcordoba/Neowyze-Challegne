@@ -79,7 +79,6 @@ const api = {
     getAllCharacters: async(currentPage?:number,eyeColor?:string):Promise<Character[]> => {
         try {
             let characters : Character[] = []
-            let count : number = 0
             
             const data = await fetch(`https://swapi.dev/api/people/?page=${currentPage}`) 
                 .then(res => res.json())
@@ -88,15 +87,7 @@ const api = {
                     return {};
                 })
 
-                characters= data.results
-           /*  for (let currentPage = 1; currentPage < 10; currentPage++) {
-                if(currentPage == 1) {
-                    count = data.count
-                }
-                for (let i = 0; i < data.results.length; i++) {
-                    characters.push(data.results[i])   
-                }    
-            } */
+            characters= data.results
 
         if(eyeColor && eyeColor != 'unknown'){
             const filteredByEyeColor = characters.filter((character:Character) =>{
