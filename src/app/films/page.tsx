@@ -8,7 +8,7 @@ export default async function FilmCollection() {
 
   return (
     <section className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-      {films.map((film) => <FilmCard film={film} key={film.episode_id}/>)}
+      {films.map( film => <FilmCard film={film} key={film.episode_id}/>)}
       <Link href={`/`}>Volver atras</Link>
     </section>
   );

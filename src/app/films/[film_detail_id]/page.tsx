@@ -5,7 +5,7 @@ import Link from "next/link";
 
 
 export default async function FilmDetailPage({ params: { film_detail_id } }: { params: { film_detail_id: number } }) {
-  const film = await api.getFilmById(film_detail_id);
+  const film = await api.getFilmById(film_detail_id); // ssr
 
   return (
     <section>

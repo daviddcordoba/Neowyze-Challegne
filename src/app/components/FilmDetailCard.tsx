@@ -16,7 +16,7 @@ const FilmDetailCard = ({film}:{film:Film}) => {
               className="mb-3 h-[400px] object-contain w-full "
               src={film.generic_image}
             />
-          </article>
+    </article>
   )
 }
 

@@ -76,15 +76,38 @@ const api = {
             }
         return character; 
     },
-    getAllCharacters: async(currentPage:number):Promise<PaginatedCharacterResponse> => {
-   
-        const data = await fetch(`https://swapi.dev/api/people/?page=${currentPage}`) 
-        .then(res => res.json())
-        .catch(e => {
-            console.log('fetchError:',e)
-            return {};
-        })
-        const characters = data.results.map((character:Character)=>{
+    getAllCharacters: async(currentPage?:number,eyeColor?:string):Promise<Character[]> => {
+        try {
+            let characters : Character[] = []
+            let count : number = 0
+            
+            const data = await fetch(`https://swapi.dev/api/people/?page=${currentPage}`) 
+                .then(res => res.json())
+                .catch(e => {
+                    console.log('fetchError:',e)
+                    return {};
+                })
+
+                characters= data.results
+           /*  for (let currentPage = 1; currentPage < 10; currentPage++) {
+                if(currentPage == 1) {
+                    count = data.count
+                }
+                for (let i = 0; i < data.results.length; i++) {
+                    characters.push(data.results[i])   
+                }    
+            } */
+
+        if(eyeColor && eyeColor != 'unknown'){
+            const filteredByEyeColor = characters.filter((character:Character) =>{
+                return eyeColor ? character.eye_color == eyeColor : true
+            })
+            
+            characters = filteredByEyeColor
+        }
+
+        characters = characters.map((character:Character)=>{
+            
             return {
                 name:character.name,
                 generic_image:"https://static.tvtropes.org/pmwiki/pub/images/rsz_eucvnjsxmamp1kf.png",
@@ -98,10 +121,14 @@ const api = {
                 url: character.url
             }
         })
-        return {
-            count:data.count,
-            characters:characters
+
+        return characters
+        
+        } catch (error) {
+            console.error("Error fetching characters:", error);
+            return []
         }
+        
     }
 };
 

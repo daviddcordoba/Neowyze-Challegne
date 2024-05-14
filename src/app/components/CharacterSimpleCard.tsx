@@ -1,7 +1,7 @@
 import { Character} from "@/types"
 import Link from "next/link"
 /* Esa puede ser solo la que uso para mostrar en el detalle del film */
-const CharacterCard = ({character}:{character:Character}) => {
+const CharacterSimpleCard = ({character}:{character:Character}) => {
     const url = character.url;
     const parts = url.split("/");
     const character_id = parts[parts.length - 2];
@@ -18,4 +18,4 @@ const CharacterCard = ({character}:{character:Character}) => {
   )
 }
 
-export default CharacterCard
+export default CharacterSimpleCard
