@@ -76,7 +76,7 @@ const api = {
             }
         return character; 
     },
-    getAllCharacters: async(currentPage?:number,eyeColor?:string):Promise<Character[]> => {
+    getAllCharacters: async(currentPage:number,eyeColor?:string):Promise<Character[]> => {
         try {
             let characters : Character[] = []
             
@@ -89,13 +89,23 @@ const api = {
 
             characters= data.results
 
-        if(eyeColor && eyeColor != 'unknown'){
+        /* let eye_color : string = eyeColor ? eyeColor : ''
+
+        if(eye_color && eye_color != 'unknown'){
+            if(eye_color.includes('-')){
+                
+            }
+            if(eye_color.includes(',')){
+
+            }
+
+
             const filteredByEyeColor = characters.filter((character:Character) =>{
-                return eyeColor ? character.eye_color == eyeColor : true
+                return eye_color ? character.eye_color == eye_color : true
             })
             
             characters = filteredByEyeColor
-        }
+        } */
 
         characters = characters.map((character:Character)=>{
             
