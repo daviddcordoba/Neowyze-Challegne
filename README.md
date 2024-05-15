@@ -77,7 +77,7 @@ Ejemplo: add(-): create card component
 -    ➔ Prácticas de nombramiento de métodos y variables.
 -    ➔ Uso y manejo de datos externos.
 -    ➔ Uso de Client Side Rendering y Server Side Rendering
--    ➔ Uso de Lazy Load para el rouating de la aplicación.
+-    ➔ Uso de Lazy Load para el routing de la aplicación.
 
 * Nota final
 Esta prueba busca definir tu nivel en el manejo de Next, no determina que seas buen@ o

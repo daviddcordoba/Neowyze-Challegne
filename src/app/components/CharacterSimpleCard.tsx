@@ -1,19 +1,19 @@
-import { Character} from "@/types"
+import { Character} from "../lib/types"
 import Link from "next/link"
-/* Esa puede ser solo la que uso para mostrar en el detalle del film */
+
 const CharacterSimpleCard = ({character}:{character:Character}) => {
     const url = character.url;
     const parts = url.split("/");
     const character_id = parts[parts.length - 2];
   return (
-        <div> 
+        <div className="flex flex-col bg-gray-500 rounded-lg shadow-md p-2"> 
             <span>{character.name}</span>
             <img
                 alt={character.name}
-                className="mb-3 h-[400px] object-contain w-full "
+                className=" h-[330px] object-contain w-full "
                 src={character.generic_image}
             />
-            <Link href={`/characters/${character_id}`} >Ver mas</Link>
+            <Link className=" text-white hover:text-gray-400" href={`/characters/${character_id}`} >Ver mas</Link>
         </div>
   )
 }
