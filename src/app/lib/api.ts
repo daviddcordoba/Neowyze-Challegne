@@ -1,10 +1,8 @@
 import { Character, Film} from "./types";
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 const api = {
     getAllFilms: async (): Promise<Film[]> => {
-        await sleep(750);
+       
         try {
             const data = await fetch('https://swapi.dev/api/films')
                 .then(res => res.json())
@@ -39,7 +37,6 @@ const api = {
         }
     },
     getFilmById: async (film_id:number): Promise<Film> => {
-        await sleep(750);
         try {
             const data = await fetch(`https://swapi.dev/api/films/${film_id}`)
             .then(res => res.json())
@@ -75,7 +72,7 @@ const api = {
     
     },
     getCharacterById: async(character_id:string) : Promise<Character> => {
-        await sleep(750);
+     
         try {
             const data = await fetch(`https://swapi.dev/api/people/${character_id}`)
             .then(res => res.json())
@@ -115,7 +112,7 @@ const api = {
         
     },
     getAllCharacters: async(currentPage:number):Promise<Character[]> => {
-        await sleep(750);
+       
         try {
             let characters : Character[] = []
             
@@ -153,7 +150,7 @@ const api = {
         
     },
     getCharactersByFilm: async(charactersOnFilm:string[]):Promise<Character[]> => {
-        await sleep(750);
+       
         try {
             const characters: Character[] = [];
             for (const characterUrl of charactersOnFilm) {
