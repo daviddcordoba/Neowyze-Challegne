@@ -44,8 +44,8 @@ En la página del personaje se debe mostrar la siguiente información:
 
 ## Filtros:
 Como plus se pueden implementar los siguientes filtros para la página de personajes:
--[-] *Filtro por color de ojos
--[-] *Filtro por género
+- [-] * Filtro por color de ojos
+- [-] * Filtro por género
 ** Nota: Los filtros se deben aplicar en todos los personajes, no en los primeros 10
 
 
