@@ -2,7 +2,6 @@ import { Character, Film} from "./types";
 
 const api = {
     getAllFilms: async (): Promise<Film[]> => {
-       
         try {
             const data = await fetch('https://swapi.dev/api/films')
                 .then(res => res.json())

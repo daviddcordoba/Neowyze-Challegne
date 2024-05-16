@@ -1,7 +1,10 @@
+'use client'
 import api from "@/app/lib/api";
 import CharactersFullContainer from "../components/CharactersFullContainer";
 import LoadMore from "../components/LoadMore";
 import Link from "next/link";
+
+
 
 export default async function CharacterCollection() { //ssr
 

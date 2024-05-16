@@ -5,8 +5,8 @@ import {useEffect, useState} from 'react'
 import {useInView} from 'react-intersection-observer'
 import Spinner from './Spinner'
 import api from '@/app/lib/api'
-import CharactersFullContainer from './CharactersFullContainer'
 import { Character } from '../lib/types'
+import CharactersFullContainer from './CharactersFullContainer'
 
 const LoadMore = () => {
     const [characters,setCharacters] = useState<Character[]>([])
